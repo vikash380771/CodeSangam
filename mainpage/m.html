@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Main Page </title>
+    <!--css link-->
+    <link rel="stylesheet" href="m.css">
+    <link rel="stylesheet" href="t.css">
+   
+    <!--box icons-->
+    <!--- Tailwind CSS & Daisy UI CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.18.0/dist/full.css" rel="stylesheet" type="text/css" />
+     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+   
+    <div class="header"> 
+    
+        <a href="#" class="logo"><img src="logo.png" alt=""></a>
+        
+        <div class="navbar">
+            <a href="#"  id="open-todo-btn">Tasks</a>
+            <a href="#">Profile</a>
+            <button class="active"   onclick="redirectTohome()">Sign out</button>
+        </div>
+    
+     </div> 
+        <section class="video">
+       <video autoplay muted loop>
+        <source src="video (2160p)(1).mp4" type="video/mp4">
+        
+       </video>
+     </section>
+
+     <!-- add here to do list section -->
+
+       <!--footer-->
+
+       <footer class="footer">
+        <div class="footer-text">
+          <p>Copyright &copy; 2023 by logo web | All Right Reserved. </p>
+        </div>
+        
+       </footer>
+    
+         
+       <!-- to do list -->
+
+  <section class="container-form" id="container-form">
+    
+        <video  class="todovideo" id="todo-video"  autoplay muted loop>
+         <source src="istockphoto-1330561257-640_adpp_is.mp4" type="video/mp4">
+        </video>
+    
+    <div class="container" id="todo-container">
+        <span id="close-icon" onclick="closeLogin()">✖</span>
+        <header>
+            <h1>Todo List</h1>
+            <!-- Error message -->
+            <div class="alert-message"></div>
+            <div class="input-section">
+                <input type="text" placeholder="Add a todo . . ." class="input input-bordered input-secondary w-full max-w-xs" />
+                <input type="date" class="input input-bordered input-secondary w-full max-w-xs schedule-date" />
+                <button class="btn btn-secondary add-task-button">
+                    <i class="bx bx-plus bx-sm"></i>
+                </button>
+            </div>
+        </header>
+
+          <div class="todos-filter">
+              <div>
+                  <div class="dropdown">
+
+                         <!-- Filter -->
+                      <label tabindex="0" class="btn m-1">Filter</label>
+                      <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                          <li onclick="filterTodos('all')"><a>All</a></li>
+                          <li onclick="filterTodos('pending')"><a>Pending</a></li>
+                          <li onclick="filterTodos('completed')"><a>Completed</a></li>
+                      </ul>
+               
+                  </div>
+
+                  <div class="dropdown">
+                         <!-- Sorting -->
+                        <label tabindex="0" class="btn m-1" id="btn-sort">Sort</label>
+                        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                              <li onclick="SortTodos('Deadline')"><a>Deadline wise</a></li>
+                              <li onclick="SortTodos('Date')"><a>Date added</a></li>
+                              <li onclick="SortTodos('Priority')"><a>Priority wise</a></li>
+                              <li onclick="SortTodos('Manual')"><a>Manual Order</a></li>
+                        </ul>
+                  </div>
+
+              </div>
+
+                  <button class="btn btn-secondary delete-all-btn">
+                      Delete All
+                  </button>
+          </div>
+
+         <table class="table w-full">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="todos-list-body">
+                <!-- yha p to do show honge -->
+            </tbody>
+        </table>
+
+    </div>
+
+</section>
+
+
+
+       
+<script src="m.js"></script>   
+<script src="t.js"></script>
+</body>
+</html>
