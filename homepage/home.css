@@ -233,12 +233,12 @@ section{
 
 /*our team */
 .about{
-    height: 600px; /*changes*/
+    height: 800px; /*changes*/
     width: 100%;
     background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
     padding: 60px;
 }
 .abt-head{
@@ -298,19 +298,24 @@ span{
     box-shadow: 0px 25px 80px rgba(1, 216, 240, 0.952);
 }
 .imgg{
-    height: 90px;
+    border-radius: 30px;
     width: 100%;
-    background-color: var(--text-color);
-    object-fit: cover;
-    object-position: center; 
+    background-color: var(--main-color);
+    padding: 10px;
+    height: 300px;
 }
 .imgg img{
-    height: 260px;
+    padding-bottom: -40px;
+    height: 250px;
     width: 100%;
+    object-fit: cover;
+    object-position: center; 
+    border-radius: 30px;
 }
+
+
 .detail{
-    margin-top: 160px;/*added*/
-   padding-left: 20px;
+   padding-left: 30px;
 }
 .detail h3{
     font-size: 2.5rem;

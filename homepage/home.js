@@ -1,9 +1,4 @@
 
-document.querySelector('.btne').addEventListener('click', function() {
-    alert('You are exploring more!'); 
-});
-
-
 document.addEventListener("DOMContentLoaded", function () {
     let currentSlide = 0;
     const slides = document.querySelectorAll(".slide");
@@ -29,4 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function redirectToSignUp() {
     window.location.href = "../signup box/signup.html";
+}
+
+
+function Tosignin() {
+    window.location.href = "../login box/login.html";
 }
