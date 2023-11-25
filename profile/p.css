@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+   background: transparent;
+}
+.containerx{
+    position: relative;
+    height: 450px;
+    width: 380px;
+    background-color: rgb(185, 241, 241);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    border-radius: 40px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgb(0, 0, 5);
+}
+
+
+#close-icon {
+    position: absolute;
+    top: 4px;
+    right: 9px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+.immg{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+   width: 250px;
+   position: relative;
+}
+.immg #addpic{
+    position: absolute;
+    top: 115px;
+    right: 65px;
+    font-size: 26px;
+    z-index: 100;
+    background-color: rgb(205, 234, 255);
+    cursor: pointer;
+}
+.immg .detail{
+  height: 70px;
+  max-width: 100%;
+  min-width: 300px;
+  text-align: center;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.detail .name {
+    font-size: 25px;
+    font-weight: 500;
+    color: blue;
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+}
+.detail .email{
+    font-size: 18px;
+    font-weight: 400;
+    color: blue;
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+}
+.immg img{
+    padding: 5px;
+    object-fit: cover;
+    object-position: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+
+.editable{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+}
+.editable .edit{
+    height: 40px;
+    width: 250px;
+    background-color: blue;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.editable .edit button{
+    outline: none;
+    border: none;
+    font-size: 18px;
+    color: white;
+    background: transparent;
+    height: 40px;
+    width: 250px;
+    cursor: pointer;
+}
+
+.editable .edit:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
