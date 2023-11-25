@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100vw;
+    padding: 2rem 4%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 14px 28px rgba(60, 59, 59, 0.25), 0 10px 10px rgba(56, 55, 55, 0.22);
+    background-color: transparent;
+}
+
+.logo{
+    width: 90px;
+    height: 90px;
+    margin-left: -40px;
+    margin-top: 1px;
+
+}
+
+.logo img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
+}
+.navbar{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    max-width: 450px;
+    justify-content: space-between;
+    right: 15px;
+    
+}
+.navbar button{
+   height: 43px;
+   width: 110px;
+   background-color: rgb(236, 241, 242);
+   color: rgb(255, 102, 0);
+   border-radius: 15px;
+   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+   cursor: pointer;
+   overflow: auto;
+   text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 23px;
+   font-weight: 500;
+}
+
+.navbar a ,button{
+font-size: 1.3rem;
+color: rgb(255, 102, 0);
+margin-left: 0;
+font-family: 'Poppins', sans-serif;
+transition: .2s;
+}
+
+.navbar a:hover{
+    color: white;
+    transform: translateY(-4px)
+}
+
+.navbar button:hover{
+    color: rgb(231, 114, 19);
+    background-color: rgb(242, 243, 239);
+    border-radius: 20px;
+    box-shadow: rgba(242, 82, 2, 0.12) 0px 2px 4px 0px, rgb(239, 138, 66)0px 2px 16px 0px;
+    
+}
+
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+
+
+/*footer*/
+.footer{
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    bottom: 0;
+    z-index: 100;
+    box-shadow: 0 14px 28px rgba(19, 19, 19, 0.25), 0 10px 10px rgba(56, 55, 55, 0.22);
+    background-color: #302121;
+}
+
+.footer-text{
+    padding-top: 10px;
+    color: rgb(255, 102, 0);
+}
