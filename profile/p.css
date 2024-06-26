@@ -14,13 +14,17 @@ body{
    align-items: center;
    justify-content: center;
    padding: 20px;
-   background: transparent;
+  background: url(https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?) center bottom;
+    background-attachment: fixed;
+    object-fit: cover;
+    background-size: cover;
+    background-attachment: fixed;
 }
 .containerx{
     position: relative;
     height: 450px;
     width: 380px;
-    background-color: rgb(185, 241, 241);
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
