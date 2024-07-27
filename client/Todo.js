@@ -1,4 +1,5 @@
 let tasks = [];
+let isAddingTask = false; // Flag to prevent multiple submissions
 
 // Fetch tasks from the server and render them
 async function fetchTasks() {
@@ -22,6 +23,10 @@ async function fetchTasks() {
 
 // Add a new task or update an existing one
 async function addTask() {
+    if (isAddingTask) return; // Prevent multiple submissions
+
+    isAddingTask = true; // Set flag to prevent multiple submissions
+
     console.log('addTask function called');
     const taskInput = document.getElementById('new-task');
     const taskDate = document.getElementById('task-date');
@@ -31,13 +36,20 @@ async function addTask() {
 
     console.log('Task details:', { taskText, taskDate: taskDate.value, taskPriority: taskPriority.value, editTaskId });
 
-    if (editTaskId) {
-        // Update existing task
-        const updatedTask = { text: taskText, date: taskDate.value, priority: taskPriority.value };
-        await updateTask(editTaskId, updatedTask);
-    } else if (taskText) {
-        // Add new task
-        try {
+    try {
+        if (editTaskId) {
+            // Update existing task
+            const updatedTask = { text: taskText, date: taskDate.value, priority: taskPriority.value };
+            await updateTask(editTaskId, updatedTask);
+        } else if (taskText) {
+            // Check for duplicates
+            const existingTask = tasks.find(task => task.text === taskText && task.date === taskDate.value && task.priority === taskPriority.value);
+            if (existingTask) {
+                alert('This task already exists!');
+                return;
+            }
+
+            // Add new task
             const response = await fetch('http://localhost:5000/api/todo/tasks', {
                 method: 'POST',
                 headers: {
@@ -55,13 +67,13 @@ async function addTask() {
             const task = await response.json();
             console.log('Task added:', task);
             tasks.push(task);
-            taskInput.value = '';
-            taskDate.value = '';
-            taskPriority.value = 'low';
+            resetInputFields();
             renderTasks();
-        } catch (error) {
-            console.error("Add task failed:", error);
         }
+    } catch (error) {
+        console.error("Add task failed:", error);
+    } finally {
+        isAddingTask = false; // Reset flag after task is added or updated
     }
 }
 
@@ -260,7 +272,7 @@ async function fetchUserDetails() {
             throw new Error('Failed to fetch user details');
         }
         const user = await response.json();
-        localStorage.setItem('username', user.username);
+        localStorage.setItem('username', user.name);
         displayUsername();
     } catch (error) {
         console.error('Error fetching user details:', error);

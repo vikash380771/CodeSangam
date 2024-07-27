@@ -86,23 +86,30 @@ router.get('/verify-email/:token', async (req, res) => {
         user.verificationToken = undefined;
         user.verificationTokenExpiry = undefined;
         await user.save();
-        res.status(200).json({
-            status: 'success',
-            message: 'Email verified successfully.',
-            data: {
-                verified: true,
-                timestamp: new Date().toISOString()
-            }
-        });
-        
-       
 
+        const mailOptions = {
+            to: user.email,
+            from: process.env.EMAIL_FROM,
+            subject: 'Email Verified Successfully',
+            text: 'Your email has been verified successfully.\n\nThank You.'
+        };
+
+        transporter.sendMail(mailOptions, (err, info) => {
+            if (err) {
+                console.error('Error sending email:', err);
+                return res.status(500).json({ msg: 'Error sending email' });
+            }
+
+            res.status(200).json({ msg: 'Email verified successfully and confirmation email sent.' });
+        });
     } catch (err) {
         console.error(err.message);
-        res.status(500).send('Server error');
-
+        res.status(500).json({ msg: 'Server error' });
     }
 });
+
+
+  
 
 router.post('/login', [
     body('email').isEmail().withMessage('Please include a valid email'),
