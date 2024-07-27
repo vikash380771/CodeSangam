@@ -1,136 +1,121 @@
-
 body {
+    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+header {
     position: fixed;
     top: 0;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 65px;
     width: 100%;
+    box-sizing: border-box;
     z-index: 1000;
 }
-
-.navbar-left {
+header img {
+    height: 50px;
+    width: 50px;
+}
+.header-title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 24px;
+}
+.header-right {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
-
-.logo {
-    height: 40px;
-    margin-right: 10px;
+.header-right span {
+    font-size: 18px;
 }
-
-.app-name {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-}
-
-.user-name {
-    margin-right: 10px;
-}
-
-#dark-mode-toggle, #logout-btn {
-    margin-left: 10px;
-    padding: 5px 10px;
-    border: none;
+.header-right button {
     background-color: white;
     color: #4CAF50;
-    cursor: pointer;
+    border: none;
+    padding: 10px;
     border-radius: 5px;
+    cursor: pointer;
 }
-
-#dark-mode-toggle:hover, #logout-btn:hover {
-    background-color: #ddd;
-}
-
-.main-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    padding-top: 100px; /* Adjusted padding to prevent content from being hidden behind navbar */
-    box-sizing: border-box;
-    width: 100%;
+.header-right button:hover {
+    background-color: #45a049;
+    color: white;
 }
 
 .container {
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 85px;
+    padding-bottom: 20px;
 }
-
-.input-section, .filter-section {
+.card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+}
+.add-task-section {
+    position: sticky;
+    top: 65px;
+    background-color: white;
+    padding-bottom: 20px;
+    z-index: 900;
+}
+h1 {
+    text-align: center;
     margin-bottom: 20px;
 }
-
-input, select, button {
+input[type="text"], input[type="date"], select, button {
+    width: calc(100% - 20px);
     padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+.task-list {
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+    margin-top: 20px;
+}
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.task input[type="checkbox"] {
     margin-right: 10px;
 }
-
-ul {
-    list-style-type: none;
-    padding: 0;
+.task .actions {
+    display: flex;
+    gap: 10px;
 }
-
-li {
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.actions button {
+    background-color: transparent;
+    color: #4CAF50;
+    border: none;
+    cursor: pointer;
 }
-
-li.completed {
-    text-decoration: line-through;
-    color: #999;
-}
-
-.dark-mode {
-    background-color: #333;
-    color: white;
-}
-
-.dark-mode .navbar {
-    background-color: #222;
-}
-
-.dark-mode .navbar-right button {
-    background-color: #444;
-    color: white;
-}
-
-.dark-mode .navbar-right button:hover {
-    background-color: #555;
-}
-
-.dark-mode li {
-    background-color: #444;
-    border-color: #555;
-    color: white;
+.actions button:hover {
+    text-decoration: underline;
 }
