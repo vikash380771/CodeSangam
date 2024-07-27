@@ -27,6 +27,12 @@ header img {
     text-align: center;
     font-size: 24px;
 }
+.header-left{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+}
 .header-right {
     display: flex;
     align-items: center;
@@ -42,6 +48,11 @@ header img {
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+}
+.header-right .darkmode img{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }
 .header-right button:hover {
     background-color: #45a049;
@@ -75,7 +86,7 @@ h1 {
     margin-bottom: 20px;
 }
 input[type="text"], input[type="date"], select, button {
-    width: calc(100% - 20px);
+    width: calc(100% );
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ddd;
@@ -95,13 +106,16 @@ button:hover {
     max-height: calc(100vh - 250px);
     overflow-y: auto;
     margin-top: 20px;
+    margin-right: 25px;
+    border: #4CAF50;
 }
 .task {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid #3b3737;
+    gap: 10px;
 }
 .task input[type="checkbox"] {
     margin-right: 10px;
@@ -118,4 +132,56 @@ button:hover {
 }
 .actions button:hover {
     text-decoration: underline;
+}
+
+/* Dark Modes */
+/* General dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+/* Dark mode styles for header */
+body.dark-mode header {
+    background-color: #555;
+}
+
+/* Dark mode styles for card */
+body.dark-mode .card {
+    background-color: #444;
+    color: white;
+}
+
+/* Dark mode styles for buttons */
+body.dark-mode button {
+    background-color: #555;
+    color: white;
+}
+
+body.dark-mode button:hover {
+    background-color: #666;
+}
+
+/* Dark mode styles for the add-task-section */
+body.dark-mode .add-task-section {
+    background-color: #444;
+    border-color: #666;
+}
+
+/* Dark mode styles for inputs and select elements */
+body.dark-mode input[type="text"], 
+body.dark-mode input[type="date"], 
+body.dark-mode select {
+    background-color: #555;
+    color: white;
+    border: 1px solid #666;
+}
+
+body.dark-mode input::placeholder {
+    color: #ccc;
+}
+
+body.dark-mode select option {
+    background-color: #555;
+    color: white;
 }
