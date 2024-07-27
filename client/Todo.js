@@ -252,6 +252,7 @@ function notifyUser(task) {
     }
 }
 
+
 // Check and notify about due dates
 function checkDueDates() {
     console.log('Checking due dates...');
@@ -288,7 +289,7 @@ function displayUsername() {
     }
 }
 
-// Document loaded event
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
     if (Notification.permission !== 'granted') {
@@ -301,8 +302,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dark mode toggle
     const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
+    
+    if (darkModeEnabled) {
+        document.body.classList.add('dark-mode');
+    }
+
     darkModeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.removeItem('darkMode');
+        }
     });
 
     // Logout button

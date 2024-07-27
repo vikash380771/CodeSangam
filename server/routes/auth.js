@@ -159,19 +159,6 @@ router.post('/login', [
 });
 
 
-router.get('/user', async (req, res) => {
-    try {
-        const userId = req.user.id; // Assuming JWT token is used for authentication
-        const user = await User.findById(userId).select('-password'); // Exclude password field
-        if (!user) {
-            return res.status(404).json({ msg: 'User not found' });
-        }
-        res.json(user);
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server error');
-    }
-});
 
 
 module.exports = router;
