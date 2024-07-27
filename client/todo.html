@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced To-Do List</title>
+    <link rel="stylesheet" href="Todo.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="logo.png" alt="Logo" class="logo"> <!-- Replace with your logo path -->
+            <span class="app-name">To-Do App</span>
+        </div>
+        <div class="navbar-right">
+            <span class="user-name">Username</span> <!-- Replace with dynamic username if needed -->
+            <button id="dark-mode-toggle">Dark Mode</button>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="container">
+            <h1>To-Do List</h1>
+            <div class="input-section">
+                <input type="hidden" id="edit-task-id">
+                <input type="text" id="new-task" placeholder="Add a new task">
+                <input type="date" id="task-date">
+                <select id="task-priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <button id="add-task-btn" onclick="addTask()">Add</button>
+                <button id="save-task-btn" onclick="saveEditedTask()" style="display: none;">Save</button>
+                <button id="cancel-edit-btn" onclick="cancelEdit()" style="display: none;">Cancel</button>
+            </div>
+            <div class="filter-section">
+                <label for="filter">Filter:</label>
+                <select id="filter" onchange="filterTasks()">
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="incomplete">Incomplete</option>
+                </select>
+                <label for="sort">Sort by:</label>
+                <select id="sort" onchange="sortTasks()">
+                    <option value="none">None</option>
+                    <option value="date">Date</option>
+                    <option value="priority">Priority</option>
+                </select>
+            </div>
+            <ul id="task-list"></ul>
+        </div>
+    </div>
+    <script src="Todo.js"></script>
+</body>
+</html>
