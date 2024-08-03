@@ -217,12 +217,14 @@
             border-radius: 4px;
             color: #fff;
             font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s ease;
+            cursor: pointer;  
+            display: inline-block;
+            transition: transform 0.3s ease;
         }
 
         .btn:hover {
-            background: #0056b3;
+            box-shadow: 0 4px 8px rgba(135, 134, 134, 0.961);
+            transform: scale(1.1);
         }
 
         .forgot-password {
@@ -279,7 +281,7 @@
 <body>
     <div class="container">
         <div class="login-box">
-            <h1>Login</h1>
+            <h1>Sign In</h1>
             <form id="loginForm" action="#" method="POST">
                 <div class="textbox">
                     <input type="email" placeholder="Email" name="email" required>
@@ -287,7 +289,7 @@
                 <div class="textbox">
                     <input type="password" placeholder="Password" name="password" required>
                 </div>
-                <input type="submit" class="btn" value="Login">
+                <input type="submit" class="btn" value="Sign In">
                 <a href="/forgotPassword.html" class="forgot-password">Forgot Password?</a>
             </form>
             <p class="login-link">Don't have an account? <a href="/signup">Sign up here</a></p>

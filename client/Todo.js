@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dark mode toggle
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
-    
+
     if (darkModeEnabled) {
         document.body.classList.add('dark-mode');
     }
@@ -329,4 +329,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('add-task-btn').addEventListener('click', addTask);
     document.getElementById('save-task-btn').addEventListener('click', saveEditedTask);
     document.getElementById('cancel-edit-btn').addEventListener('click', cancelEdit);
+    document.getElementById('filter').addEventListener('change', renderTasks);
+    document.getElementById('sort').addEventListener('change', renderTasks);
 });
